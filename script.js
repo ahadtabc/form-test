@@ -15,7 +15,7 @@ const statusMessage =
 */
 
 const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbwWbGu5MNk9MQC0dgH5J-j9H8Lh93USLGI0GBboXL3vbJWJF4QEchrkLYUtg3-zbj-DLw/exec";
+"https://script.google.com/macros/s/AKfycbwWbGu5MNk9MQC0dgH5J-j9H8Lh93USLGI0GBboXL3vbJWJF4QEchrkLYUtg3-zbj-DLw/exec";
 
 form.addEventListener("submit", async function (event) {
 
