@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+}
+
+
+/* ================================
+   ANIMATED BACKGROUND
+================================ */
+
+body {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(37, 211, 102, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0, 128, 105, 0.30),
+            transparent 30%
+        ),
+        #071c17;
+}
+
+
+/* Animated blobs */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.4;
+
+    z-index: -1;
+
+    animation: float 10s infinite alternate ease-in-out;
+}
+
+
+body::before {
+    background: #25d366;
+    top: -100px;
+    left: -100px;
+}
+
+
+body::after {
+    background: #075e54;
+    right: -100px;
+    bottom: -100px;
+
+    animation-delay: 3s;
+}
+
+
+@keyframes float {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(100px, 50px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50px, 100px) scale(0.9);
+    }
+
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ================================
+   GLASS CARD
+================================ */
+
+.form-card {
+
+    width: 100%;
+    max-width: 550px;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.logo {
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #25d366;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 30px rgba(37, 211, 102, 0.3);
+
+}
+
+
+.form-header h1 {
+
+    font-size: 30px;
+    margin-bottom: 10px;
+
+}
+
+
+.form-header p {
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.5;
+
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color: rgba(255, 255, 255, 0.45);
+
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: #25d366;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 211, 102, 0.12);
+
+}
+
+
+select option {
+
+    background: #075e54;
+    color: white;
+
+}
+
+
+textarea {
+
+    resize: vertical;
+
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #25d366;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    background: #20bd5a;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 211, 102, 0.25);
+
+}
+
+
+button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* ================================
+   STATUS
+================================ */
+
+.status-message {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    min-height: 20px;
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .page {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .form-card {
+
+        padding: 25px 20px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .form-header h1 {
+
+        font-size: 25px;
+
+    }
+
+}
